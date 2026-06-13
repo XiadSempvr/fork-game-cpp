@@ -1,3 +1,3 @@
-# Documentacao de meu pequeno estruto de jogo da forca escrito em C++
+# Documentation of a simple game written on Cpp
 
-test
+Contain simple features like word masking and word sorting based on pseudo random index sorting.
