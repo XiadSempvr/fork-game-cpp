@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include <vector>
+#include <fstream>
 
 auto rand_word(const std::string& f) -> std::string {
     std::ifstream file(f);
@@ -39,6 +39,6 @@ auto mask(std::string word, char mask) -> std::string{
 }
 
 int main(){
-    std::cout<<rand_word("../testes_com_arquivos/sla.txt")<<std::endl;
+    std::cout<<mask(rand_word("./dictionary/sla.txt"), '*')<<std::endl;
     return 0;
 }
