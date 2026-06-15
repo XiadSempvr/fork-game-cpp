@@ -46,17 +46,33 @@ auto mask(std::string word, char mask) -> std::string
 
 int main()
 {
-    std::cout << "And your word is: " << mask(rand_word("./dictionary/sla.txt"), '#') << std::endl;
-    std::string wS = rand_word("./dictionary/sla.txt");
-    std::cout << "Come on! Type your guess down below: " << std::endl;
+    std::string w = rand_word("./dictionary/sla.txt");
 
-    char guess;
-    std::cin >> guess;
+    std::cout << "Your word is: "
+              << mask(w, '#')
+              << std::endl;
 
-    for(char guess : wS){
-        if(wS.find(guess)) std::cout<<"Encontrado.";
-        break;
+    std::cout << "Type a guess!"
+              << std::endl;
+
+    char g;
+    std::cin >> g;
+
+    int e, a;
+    for (int i = 0; i < w.length(); ++i)
+    {
+        if (w[i] == g)
+        {
+            w.replace(w[i], g);
+            ++a;
+        }
+        else
+        {
+            ++e;
+        }
     }
+
+    std::cout<<e<<a<<std::endl;
 
     return 0;
 }
